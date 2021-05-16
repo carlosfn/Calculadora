@@ -1,12 +1,11 @@
 package br.senai.sc.calculadora;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
-import android.view.accessibility.AccessibilityManager;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         display = findViewById(R.id.tv_display);
     }
 
-    public void onClickBotao1(View v){
-        if (operacao.isEmpty()){
+    public void onClickBotao1(View v) {
+        if (operacao.isEmpty()) {
             primeiroNumero = primeiroNumero + "1";
         } else {
             segundoNumero = segundoNumero + "1";
@@ -33,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
         atualizaDisplay("1");
     }
 
-    public void onClickBotao2(View v){
-        if (operacao.isEmpty()){
+    public void onClickBotao2(View v) {
+        if (operacao.isEmpty()) {
             primeiroNumero = primeiroNumero + "2";
         } else {
             segundoNumero = segundoNumero + "2";
@@ -42,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         atualizaDisplay("2");
     }
 
-    public void onClickBotao3(View v){
-        if (operacao.isEmpty()){
+    public void onClickBotao3(View v) {
+        if (operacao.isEmpty()) {
             primeiroNumero = primeiroNumero + "3";
         } else {
             segundoNumero = segundoNumero + "3";
@@ -51,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
         atualizaDisplay("3");
     }
 
-    public void onClickBotao4(View v){
-        if (operacao.isEmpty()){
+    public void onClickBotao4(View v) {
+        if (operacao.isEmpty()) {
             primeiroNumero = primeiroNumero + "4";
         } else {
             segundoNumero = segundoNumero + "4";
@@ -60,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
         atualizaDisplay("4");
     }
 
-    public void onClickBotao5(View v){
-        if (operacao.isEmpty()){
+    public void onClickBotao5(View v) {
+        if (operacao.isEmpty()) {
             primeiroNumero = primeiroNumero + "5";
         } else {
             segundoNumero = segundoNumero + "5";
@@ -69,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
         atualizaDisplay("5");
     }
 
-    public void onClickBotao6(View v){
-        if (operacao.isEmpty()){
+    public void onClickBotao6(View v) {
+        if (operacao.isEmpty()) {
             primeiroNumero = primeiroNumero + "6";
         } else {
             segundoNumero = segundoNumero + "6";
@@ -78,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
         atualizaDisplay("6");
     }
 
-    public void onClickBotao7(View v){
-        if (operacao.isEmpty()){
+    public void onClickBotao7(View v) {
+        if (operacao.isEmpty()) {
             primeiroNumero = primeiroNumero + "7";
         } else {
             segundoNumero = segundoNumero + "7";
@@ -87,8 +86,8 @@ public class MainActivity extends AppCompatActivity {
         atualizaDisplay("7");
     }
 
-    public void onClickBotao8(View v){
-        if (operacao.isEmpty()){
+    public void onClickBotao8(View v) {
+        if (operacao.isEmpty()) {
             primeiroNumero = primeiroNumero + "8";
         } else {
             segundoNumero = segundoNumero + "8";
@@ -96,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
         atualizaDisplay("8");
     }
 
-    public void onClickBotao9(View v){
-        if (operacao.isEmpty()){
+    public void onClickBotao9(View v) {
+        if (operacao.isEmpty()) {
             primeiroNumero = primeiroNumero + "9";
         } else {
             segundoNumero = segundoNumero + "9";
@@ -105,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
         atualizaDisplay("9");
     }
 
-    public void onClickBotao0(View v){
-        if (operacao.isEmpty()){
+    public void onClickBotao0(View v) {
+        if (operacao.isEmpty()) {
             primeiroNumero = primeiroNumero + "0";
         } else {
             segundoNumero = segundoNumero + "0";
@@ -114,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         atualizaDisplay("0");
     }
 
-    public void onClickLimpar(View v){
+    public void onClickLimpar(View v) {
         resultado = "";
         primeiroNumero = "";
         segundoNumero = "";
@@ -122,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
         display.setText(resultado);
     }
 
-    public void onClickDivisao(View v){
+    public void onClickDivisao(View v) {
         if (!primeiroNumero.isEmpty()) {
             operacao = "/";
             atualizaDisplay("/");
@@ -131,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onClickMultiplicacao(View v){
+    public void onClickMultiplicacao(View v) {
         if (!primeiroNumero.isEmpty()) {
             operacao = "x";
             atualizaDisplay("x");
@@ -140,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onClickAdicao(View v){
+    public void onClickAdicao(View v) {
         if (!primeiroNumero.isEmpty()) {
             operacao = "+";
             atualizaDisplay("+");
@@ -149,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onClickSubtracao(View v){
+    public void onClickSubtracao(View v) {
         if (!primeiroNumero.isEmpty()) {
             operacao = "-";
             atualizaDisplay("-");
@@ -159,11 +158,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
-
-    public void onClickIgual(View v){
-        if (!primeiroNumero.isEmpty() && !segundoNumero.isEmpty()){
+    public void onClickIgual(View v) {
+        if (!primeiroNumero.isEmpty() && !segundoNumero.isEmpty()) {
             int numero1 = Integer.parseInt(primeiroNumero);
             int numero2 = Integer.parseInt(segundoNumero);
 
@@ -172,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                 display.setText(String.valueOf(resultado));
             }
             if (operacao.equals("/")) {
-                if (numero1==0){
+                if (numero1 == 0) {
                     Toast.makeText(MainActivity.this, "Não é possivel dividir por 0", Toast.LENGTH_LONG).show();
                 } else {
                     int resultado = numero1 / numero2;
@@ -193,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void atualizaDisplay(String texto){
+    public void atualizaDisplay(String texto) {
         String textoDisplay = display.getText().toString();
         textoDisplay = textoDisplay + texto;
         display.setText(textoDisplay);
